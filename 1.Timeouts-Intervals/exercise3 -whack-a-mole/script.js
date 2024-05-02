@@ -1,5 +1,6 @@
 const circles = document.querySelectorAll(".circle");
 const displayScore = document.querySelector(".score");
+let score = 0;
 
 function circleRandomizer() {
     // circles.forEach(circle => {
@@ -14,11 +15,11 @@ function circleRandomizer() {
     setTimeout(() => {
         randomCircle.classList.remove("active");
         randomCircle.style.backgroundColor = "beige";
-    }, 2000);
+    }, 1500);
 }
 
 function changeScore() {
-    score++;
+    score += 10;
     displayScore.textContent = `Score: ${score}`;
 }
 
@@ -29,3 +30,4 @@ circles.forEach(circle => {
         }
     });
 });
+setInterval(circleRandomizer, 1500);
